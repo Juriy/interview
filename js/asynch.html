@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Asynch code</title>
+    <meta name="description" content="">
+    <style></style>
+</head>
+<body>
+
+<script>
+	function getDocumentFromServer(documentId, cb) {
+		setTimeout(Math.random()*500 + 100, function() {
+			cb(null, "document " + documentId);
+		});
+	}
+
+	function onResult() {
+		console.log("Done!");
+	}
+
+	// Fetch 5 documents from the server with getDocumentFromServer
+	// and call onResult once all are fetched
+
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Events</title>
+    <meta name="description" content="Tree">
+</head>
+<body>
+
+<script>
+	function Node(name) {
+		this.name = name;
+		this.children = [];
+	}
+
+	var a = new Node("A");
+	var b = new Node("B");
+	var c = new Node("C");
+	var d = new Node("D");
+	var e = new Node("E");
+	var f = new Node("F");
+	var g = new Node("G");
+	var h = new Node("H");
+
+	a.children = [b, c];
+	b.children = [d, e];
+	c.children = [f, g];
+	d.children = [h];
+
+	/**
+	 *          A
+	 *         / \
+	 *      B       C
+	 *    /  \     / \
+	 *   D    E   F   G
+	 *   |
+	 *   H
+	 */
+
+
+	function find(tree, text) {
+		// Your code goes here
+	}
+
+	find(a, "F"); // Should return f
+	find(a, "Z"); // should return null
+</script>
+
+</body>
+</html>

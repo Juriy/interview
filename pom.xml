@@ -1,0 +1,132 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+    
+	<artifactId>juriy-interivew</artifactId>
+	<groupId>com.juriy.interview</groupId>
+	<packaging>jar</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<name>Interview java tasks</name>
+
+	<properties>
+        <spring.version>4.1.4.RELEASE</spring.version>
+        <testng.version>6.8.21</testng.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <main.class>com.juriy.interview.http.Main</main.class>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            
+            <!-- *********** -->
+            <!-- Spring      -->
+            <!-- *********** -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <!-- *********** -->
+            <!-- Logging     -->
+            <!-- *********** -->
+            <dependency>
+                <artifactId>slf4j-api</artifactId>
+                <groupId>org.slf4j</groupId>
+                <version>1.6.1</version>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>1.6.1</version>
+                <type>jar</type>
+            </dependency>
+
+            <!-- *********** -->
+            <!-- TestNG      -->
+            <!-- *********** -->
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>${testng.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+	<dependencies>
+        <dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<artifactId>slf4j-api</artifactId>
+			<groupId>org.slf4j</groupId>
+			<version>1.6.1</version>
+			<scope>compile</scope>
+			<type>jar</type>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.6.1</version>
+			<scope>runtime</scope>
+			<type>jar</type>
+		</dependency>
+
+        <!-- ***************   -->
+        <!-- TEST DEPENDENCIES -->
+        <!-- ***************   -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+	<build>
+		<finalName>http-task</finalName>
+		<plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.3.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>${main.class}</mainClass>
+                    <arguments>
+                        <argument>local.properties</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
+		</plugins>
+	</build>
+</project>

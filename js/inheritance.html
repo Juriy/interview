@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Inheritance</title>
+    <meta name="description" content="">
+    <style></style>
+</head>
+<body>
+
+<script>
+
+	// Write your code so that my code below works
+	// resuse as much as possible with a 
+	// help of prototypal inheritance
+
+	var person = new Person("John", "Doe");
+	console.log(person.getDescription()); // Should print "John Doe"
+
+	var student = new Student("Mathew", "Rogers", 5); 
+	console.log(student.getDescription()); // Should print "Mathew Rogers, avg score: 5"	
+	console.log(student instanceof Person); // Should return true
+</script>
+</body>
+</html>

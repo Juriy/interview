@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Asynch code</title>
+    <meta name="description" content="">
+    <style></style>
+</head>
+<body>
+    <button>Click!</button>
+
+<script>
+    var counter = {
+        cnt: 0,
+
+        inc: function() {
+            cnt++;
+            console.log(cnt);
+        }
+    };
+
+    var button = document.getElementsByTagName('button')[0];
+    button.addEventListener('click', counter.inc(), false);
+
+</script>
+</body>
+</html>
