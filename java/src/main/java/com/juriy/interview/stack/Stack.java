@@ -6,7 +6,7 @@ public class Stack {
     private int pos;
 
     public Stack(int size) {
-       data = new Object[size];
+       data = new Array[size];
        pos = 0;
     }
 
@@ -25,10 +25,6 @@ public class Stack {
     }
 
     public Object pop() {
-        return data[--pos];
-    }
-
-    public int getMaxPos() {
-        return this.data.length;
+        return data[pos--];
     }
 }
